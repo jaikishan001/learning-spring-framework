@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+ xmlns:p="http://www.springframework.org/schema/p"
+ xmlns:util="http://www.springframework.org/schema/util"
+ xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd
+    
+
+    http://www.springframework.org/schema/util
+    http://www.springframework.org/schema/util/spring-util.xsd"> 
+    
+    <!-- standalone map  (util include, schema location util-->
+	 
+	<util:map map-class="java.util.HashMap" id="fees">
+			<entry key="Spring framework" value="8000"/>
+			<entry key="django framework" value="5000"/>
+			<entry key="Spring hibernate" value="2000"/>
+	</util:map>
+    
+    <!-- standalone list  (util include, schema location util-->
+	<util:list list-class="java.util.Vector" id="mybestfriends">
+			<value>aman</value>
+			<value>chaman</value>
+			<value>gagan</value>
+	</util:list>  
+	
+	<util:list list-class="java.util.ArrayList" id="myfriends">
+			<value>allo</value>
+			<value>bhallo</value>
+			<value>billo</value>
+	</util:list>  
+	
+	
+	<!-- standalone properties (util include, schema location util-->
+	<util:properties id="dbconfig">
+			<prop key="driver">com.mysql.jdbc.Driver</prop>
+			<prop key="username">kishan</prop>
+			<prop key="password">abc</prop>
+			<prop key="url">mysql.jdbc://localhost:3306/database</prop>
+	</util:properties>
+	 
+	
+	
+	<bean class="cpm.springcore.standalone.collections.person" name="per1">
+			<property name="friends">
+				<ref bean="mybestfriends" />
+			</property>
+			
+			<property name="feeStructure">
+				<ref bean="fees"/>
+			</property>
+			
+			<property name="props">
+				<ref bean="dbconfig"/>
+			</property>
+	</bean>
+	
+	<bean class="cpm.springcore.standalone.collections.person" name="per2">
+	<property name="friends"  ref="myfriends" />
+
+	</bean>
+	
+	<bean class="cpm.springcore.standalone.collections.person" name="f1">
+	<property name="feeStructure">
+	<ref bean="fees"/>
+	</property>
+	</bean>
+
+
+</beans>

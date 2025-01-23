@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:context="http://www.springframework.org/schema/context"
+ xmlns:p="http://www.springframework.org/schema/p"
+ xmlns:c="http://www.springframework.org/schema/c"
+ xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd"> 
+    
+    
+	<bean class="com.springcore.ci.certi" name="certi1"  c:name="java programming language" />
+			
+
+
+<!-- <bean class="com.springcore.ci.person" name="per1" c:personeName="kishan Yadav" c:personeId="123" c:cert-ref="certi1"/> -->	
+	
+	<bean class="com.springcore.ci.person" name="per1">
+	
+			<constructor-arg name="personeName" value="kishan yadav" />
+			<constructor-arg name="personeId"  value="123" />
+			<constructor-arg ref="certi1" /> 
+			<constructor-arg>
+			<list>
+				<value>python</value>
+				<value>java</value>
+				<value>ruby</value>
+				<value>kotlin</value>
+			</list>
+			</constructor-arg>
+	</bean>
+
+
+<!-- solving ambiguity problem in constructor using "type" and "index" -->
+	<bean class="com.springcore.ci.addition" name="add1">
+			<constructor-arg value="12" type="double" index="1"/>
+			<constructor-arg value="55" type="double" index="0"/> 
+			<!-- though by default value string me jati h but we can specify that
+			value should be adding in int or double through type keyword
+			and we can also manage sequence of value through index keyword
+			 -->
+	</bean>
+
+</beans>

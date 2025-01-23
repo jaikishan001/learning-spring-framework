@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:context="http://www.springframework.org/schema/context"
+ xmlns:p="http://www.springframework.org/schema/p"
+ xmlns:c="http://www.springframework.org/schema/c"
+ xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd"> 
+    
+    
+    <context:annotation-config/> <!--have to enable annotation__ ye likhne se jitne bhi annotation honge sare run hone lagenge -->
+     
+     <!-- name should be same as ref object name when we using byName autowire -->
+     <!-- agar name diffrent hoga and vo name ka koi object nhi hoga to null return karega -->
+     
+	<bean class="com.springcore.autowire.address" name="add1" p:street="SV road" p:city="mumbai"/>
+	
+	<bean class="com.springcore.autowire.address" name="add" p:street="MG road" p:city="kandivali"/>
+	
+	
+	
+	<!-- reference object inject larne keliye hum log autowiring use kar sakte h -->
+	<bean class="com.springcore.autowire.emp" name="emp1" autowire="byName"/>
+	
+	<!-- when we use byType then it will search for type means searches for than bean type 
+	e.g private Address add to Address type search karega at time of object creation  then address vali bean ,milegi to inject kar dega-->
+	<bean class="com.springcore.autowire.emp" name="emp2" autowire="byType"/>
+	
+	<!-- using constructor me reference type ka object name same hona chiye -->
+			<bean class="com.springcore.autowire.emp" name="emp3" autowire="constructor"/>
+			
+			<!-- emp1 hi only call hoga kyuki main method me emp1 h teeno use karenge to error ayega-->
+	
+</beans>
