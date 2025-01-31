@@ -16,3 +16,17 @@ One of the important aspects I learned was how to configure Servlets and JSPs in
 then after completing this i created some project using this concept e.g handling request from client side , MVC project for registration and seamlessly login pages etc
 
 2. started learnig spring core/jdbc/hibernate/orm/mvc comcepts
+
+Once I became comfortable with JSP and Servlets, I shifted to learning Spring Core. I focused on concepts like Inversion of Control (IoC) and Dependency Injection (DI), which are fundamental to building loosely coupled, maintainable applications. I learned how Spring’s ApplicationContext and BeanFactory work to manage beans and their lifecycles
+
+I moved on to learning Spring JDBC to simplify database interactions. This allowed me to work with relational databases without dealing with much boilerplate code. I also delved into Spring ORM to integrate Hibernate and manage database operations in a more object-oriented way
+
+Finally, I explored Spring MVC, a powerful framework for building web applications with a clean MVC architecture. I learned how Spring MVC controllers handle HTTP requests, how to return views from controllers, and how to bind form data to Java objects. I also worked with ViewResolvers, model attributes, and validation to make the application more user-friendly.
+
+I became proficient in configuring Spring beans through both XML-based configuration and Java-based configuration (using annotations like @Configuration and @Bean). I also worked with the web.xml file to map Spring DispatcherServlet and integrate Spring with web applications.
+
+Challenges and Problem-Solvin---
+As I delved into Spring and Hibernate, I faced several challenges, particularly with dependency injection, transaction management, and understanding the different layers of Spring applications. Debugging issues related to Hibernate configurations, session management.
+
+
+---I’m now excited to continue expanding my knowledge, especially with Spring Boot, Spring Security, and more advanced Hibernate techniques.
